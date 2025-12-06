@@ -19,13 +19,12 @@
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      min-height: 120vh; /* Make page longer */
+      min-height: 120vh;
       overflow-x: hidden;
       color: white;
       padding-top: 30px;
     }
 
-    /* Animated Background */
     body::before {
       content: '';
       position: absolute;
@@ -45,7 +44,6 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* Title */
     .neon-text {
       font-size: 2.8em;
       text-align: center;
@@ -62,21 +60,20 @@
       100% { opacity: 1; }
     }
 
-    /* Description Box */
     .box {
       position: relative;
       padding: 30px;
-      margin-bottom: 60px; /* More space below box */
+      margin-bottom: 60px;
       width: 75%;
       max-width: 700px;
       text-align: center;
       font-size: 1.3em;
-      background: rgba(255, 255, 255, 0.9); /* Light background */
+      background: rgba(255, 255, 255, 0.9);
       border-radius: 15px;
       z-index: 1;
       overflow: hidden;
       font-family: 'Orbitron', sans-serif;
-      color: #000; /* Black text */
+      color: #000;
     }
 
     .box::before {
@@ -90,7 +87,7 @@
       background-size: 400% 400%;
       border-radius: 20px;
       z-index: -1;
-      animation: rotateBorder 20s linear infinite; /* Slower speed */
+      animation: rotateBorder 20s linear infinite;
       filter: blur(2px);
     }
 
@@ -100,13 +97,12 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* Glowing Buttons */
     .button {
       background-color: #111;
       color: #fff;
       border: 2px solid transparent;
       padding: 15px 30px;
-      margin: 25px 0; /* More vertical spacing */
+      margin: 25px 0;
       font-size: 1em;
       border-radius: 10px;
       text-align: center;
@@ -140,25 +136,18 @@
 </head>
 <body>
 
-  <!-- Title -->
-  <div class="neon-text">MADE BY TECHNICAL FAHAD</div>
+  <h1 class="neon-text">TECHNICAL FAHAD</h1>
 
-  <!-- Description Box -->
   <div class="box">
-    Hi I'm Fahad, I'm Not a Hacker,<br>
-    I'm Just A <strong style="color:#ff6600;">TECHNICAL BOY</strong>.<br>
-    This is my new project 🤭<br>
-    Hope you like this!
+    Welcome to my official website!  
+    I am Technical Fahad – Android Developer, Script Maker, Bot Developer,  
+    and CyberTech Specialist.
   </div>
 
-  <!-- TECH KING Button -->
-  <div class="button">TECH KING</div>
-
-  <!-- CONTACT FOR HELP Button -->
-  <div class="button">CONTACT FOR HELP</div>
-
-  <!-- Phone Number Button -->
-  <div class="button">+923251138959</div>
+  <!-- ⭐ CONTACT BUTTON (WhatsApp Direct Open) -->
+  <a href="https://wa.me/923251138959" target="_blank">
+    <button class="button">Contact Me</button>
+  </a>
 
 </body>
 </html>
