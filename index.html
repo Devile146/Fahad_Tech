@@ -268,6 +268,160 @@
     }
 
     .button:hover {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TECHNICAL FAHAD Intro</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Audiowide&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #000;
+      font-family: 'Audiowide', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 120vh;
+      overflow-x: hidden;
+      color: white;
+      padding-top: 30px;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #ff00cc, #3333ff, #00ffcc, #ffcc00);
+      background-size: 600% 600%;
+      animation: gradientBackground 15s ease infinite;
+      z-index: -1;
+      opacity: 0.2;
+    }
+
+    @keyframes gradientBackground {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .neon-text {
+      font-size: 2.8em;
+      text-align: center;
+      color: #00ffff;
+      text-shadow: 0 0 5px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
+      animation: flicker 2.5s infinite alternate;
+      margin-top: 10px;
+      margin-bottom: 40px;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 1; }
+      50% { opacity: 0.9; }
+      100% { opacity: 1; }
+    }
+
+    /* PHOTO FIXED */
+    .photo-container {
+      position: relative;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      margin-bottom: 50px;
+    }
+
+    .photo-container img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      display: block;
+      object-fit: cover;
+      position: relative;
+      z-index: 1;
+    }
+
+    .photo-container::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      border-radius: 50%;
+      background: conic-gradient(#ff00cc, #00ffff, #ffcc00, #00ffcc, #ff00cc);
+      z-index: 0;
+      animation: rotateNeon 5s linear infinite;
+    }
+
+    @keyframes rotateNeon {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .box {
+      position: relative;
+      padding: 30px;
+      margin-bottom: 40px;
+      width: 75%;
+      max-width: 700px;
+      text-align: center;
+      font-size: 1.3em;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      z-index: 1;
+      overflow: hidden;
+      font-family: 'Orbitron', sans-serif;
+      color: #000;
+    }
+
+    .box::before {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      right: -3px;
+      bottom: -3px;
+      background: linear-gradient(60deg, #ff00cc, #00ffff, #ffcc00, #00ffcc, #ff00cc);
+      background-size: 400% 400%;
+      border-radius: 20px;
+      z-index: -1;
+      animation: rotateBorder 20s linear infinite;
+      filter: blur(2px);
+    }
+
+    @keyframes rotateBorder {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .button {
+      background-color: #111;
+      color: #fff;
+      border: 2px solid transparent;
+      padding: 15px 30px;
+      margin: 25px 0;
+      font-size: 1em;
+      border-radius: 10px;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.4s ease;
+      animation: buttonGlow 5s infinite alternate;
+      box-shadow: 0 0 15px #00ffff, 0 0 30px #ff00ff;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .button:hover {
       transform: scale(1.07);
       box-shadow: 0 0 25px #ff00cc, 0 0 35px #00ffcc;
     }
