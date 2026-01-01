@@ -1,475 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>TECHNICAL FAHAD Intro</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Audiowide&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technical Fahad Hacker Fonts</title>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Share+Tech+Mono&family=Black+Ops+One&family=Nosifer&family=Megrim&family=Unica+One&family=VT323&family=Monofett&family=Krona+One&family=Fira+Code&family=Press+Start+2P&family=Luckiest+Guy&family=Alfa+Slab+One&family=Monoton&family=Pacifico&family=Dancing+Script&family=Great+Vibes&family=Satisfy&family=Righteous&family=Pirata+One&family=Bangers&family=Fredoka+One&family=Chewy&family=Courier+Prime&family=Roboto+Slab&family=Bungee&family=Sigmar+One&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
-    body {
-      background-color: #000;
-      font-family: 'Audiowide', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 120vh;
-      overflow-x: hidden;
-      color: white;
-      padding-top: 30px;
-      position: relative;
-    }
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
 
-    body::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(45deg, #ff00cc, #3333ff, #00ffcc, #ffcc00);
-      background-size: 600% 600%;
-      animation: gradientBackground 15s ease infinite;
-      z-index: -1;
-      opacity: 0.2;
-    }
+body{
+  background:#02040a;
+  color:#fff;
+  font-family:Poppins,sans-serif;
+  overflow-x:hidden;
+  padding-bottom:120px;
+}
 
-    @keyframes gradientBackground {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+/* HACKER GRID BACKGROUND */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    linear-gradient(rgba(0,255,170,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,170,0.08) 1px, transparent 1px);
+  background-size:40px 40px;
+  animation:gridMove 10s linear infinite;
+  z-index:-2;
+}
 
-    .neon-text {
-      font-size: 2.8em;
-      text-align: center;
-      color: #00ffff;
-      text-shadow: 0 0 5px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
-      animation: flicker 2.5s infinite alternate;
-      margin-top: 10px;
-      margin-bottom: 40px;
-    }
+@keyframes gridMove{
+  from{background-position:0 0,0 0}
+  to{background-position:40px 40px,40px 40px}
+}
 
-    @keyframes flicker {
-      0% { opacity: 1; }
-      50% { opacity: 0.9; }
-      100% { opacity: 1; }
-    }
+/* CONTAINER */
+.container{
+  max-width:480px;
+  margin:20px auto;
+  padding:15px;
+}
 
-    /* ✅ PHOTO WITH RUNNING NEON BORDER, PHOTO FIXED */
-    .photo-container {
-      position: relative;
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      margin-bottom: 50px;
-    }
+/* PROFILE */
+.profile-photo{
+  width:120px;
+  height:120px;
+  margin:0 auto 10px;
+  border-radius:50%;
+  padding:5px;
+  background:conic-gradient(#00ffea,#ff00ff,#00ff00,#00ffea);
+  animation:hue 6s linear infinite;
+}
+.profile-photo img{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid #02040a;
+}
+@keyframes hue{100%{filter:hue-rotate(360deg)}}
 
-    .photo-container img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      display: block;
-      object-fit: cover;
-      position: relative;
-      z-index: 1; /* Photo above border pseudo-element */
-    }
+.header{text-align:center}
+.header h1{color:#00ffea;margin-bottom:5px}
+.header p{font-size:13px;color:#aaa}
 
-    /* Neon running border using pseudo-element */
-    .photo-container::before {
-      content: '';
-      position: absolute;
-      top: -5px;
-      left: -5px;
-      right: -5px;
-      bottom: -5px;
-      border-radius: 50%;
-      background: conic-gradient(#ff00cc, #00ffff, #ffcc00, #00ffcc, #ff00cc);
-      z-index: 0;
-      animation: rotateNeon 5s linear infinite;
-    }
+/* INPUT */
+input{
+  width:100%;
+  padding:14px;
+  margin:15px 0 10px;
+  border:none;
+  border-radius:12px;
+  background:#0b1623;
+  color:#fff;
+  font-size:16px;
+}
 
-    @keyframes rotateNeon {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
+/* GENERATE BUTTON WITH RING */
+.generate-btn{
+  width:100%;
+  padding:14px;
+  border-radius:14px;
+  border:2px solid transparent;
+  background:
+    linear-gradient(#02040a,#02040a) padding-box,
+    linear-gradient(90deg,#00ffea,#ff00ff,#00ff00) border-box;
+  color:#00ffea;
+  font-weight:700;
+  cursor:pointer;
+}
 
-    .box {
-      position: relative;
-      padding: 30px;
-      margin-bottom: 60px;
-      width: 75%;
-      max-width: 700px;
-      text-align: center;
-      font-size: 1.3em;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 15px;
-      z-index: 1;
-      overflow: hidden;
-      font-family: 'Orbitron', sans-serif;
-      color: #000;
-    }
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>TECHNICAL FAHAD Intro</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Audiowide&display=swap');
+/* RESULT */
+.result{
+  margin-top:20px;
+  max-height:760px;
+  overflow-y:auto;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+/* FONT CARD WITH COLOR RING SIDES */
+.card{
+  position:relative;
+  padding:20px;
+  margin-bottom:16px;
+  border-radius:14px;
+  background:
+    linear-gradient(#0b1623,#0b1623) padding-box,
+    linear-gradient(90deg,#00ffea,#ff00ff,#00ff00) border-box;
+  border:2px solid transparent;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  min-height:85px;
+  font-size:16px;
+  word-break:break-word;
+}
 
-    body {
-      background-color: #000;
-      font-family: 'Audiowide', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 120vh;
-      overflow-x: hidden;
-      color: white;
-      padding-top: 30px;
-      position: relative;
-    }
+/* COPY BUTTON (NORMAL FONT) */
+.copy{
+  font-family:Poppins,sans-serif;
+  color:#fff;
+  border:1px solid #fff;
+  padding:6px 10px;
+  border-radius:6px;
+  cursor:pointer;
+}
 
-    body::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(45deg, #ff00cc, #3333ff, #00ffcc, #ffcc00);
-      background-size: 600% 600%;
-      animation: gradientBackground 15s ease infinite;
-      z-index: -1;
-      opacity: 0.2;
-    }
-
-    @keyframes gradientBackground {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .neon-text {
-      font-size: 2.8em;
-      text-align: center;
-      color: #00ffff;
-      text-shadow: 0 0 5px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
-      animation: flicker 2.5s infinite alternate;
-      margin-top: 10px;
-      margin-bottom: 40px;
-    }
-
-    @keyframes flicker {
-      0% { opacity: 1; }
-      50% { opacity: 0.9; }
-      100% { opacity: 1; }
-    }
-
-    /* PHOTO FIXED */
-    .photo-container {
-      position: relative;
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      margin-bottom: 50px;
-    }
-
-    .photo-container img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      display: block;
-      object-fit: cover;
-      position: relative;
-      z-index: 1;
-    }
-
-    .photo-container::before {
-      content: '';
-      position: absolute;
-      top: -5px;
-      left: -5px;
-      right: -5px;
-      bottom: -5px;
-      border-radius: 50%;
-      background: conic-gradient(#ff00cc, #00ffff, #ffcc00, #00ffcc, #ff00cc);
-      z-index: 0;
-      animation: rotateNeon 5s linear infinite;
-    }
-
-    @keyframes rotateNeon {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    .box {
-      position: relative;
-      padding: 30px;
-      margin-bottom: 40px;
-      width: 75%;
-      max-width: 700px;
-      text-align: center;
-      font-size: 1.3em;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 15px;
-      z-index: 1;
-      overflow: hidden;
-      font-family: 'Orbitron', sans-serif;
-      color: #000;
-    }
-
-    .box::before {
-      content: '';
-      position: absolute;
-      top: -3px;
-      left: -3px;
-      right: -3px;
-      bottom: -3px;
-      background: linear-gradient(60deg, #ff00cc, #00ffff, #ffcc00, #00ffcc, #ff00cc);
-      background-size: 400% 400%;
-      border-radius: 20px;
-      z-index: -1;
-      animation: rotateBorder 20s linear infinite;
-      filter: blur(2px);
-    }
-
-    @keyframes rotateBorder {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .button {
-      background-color: #111;
-      color: #fff;
-      border: 2px solid transparent;
-      padding: 15px 30px;
-      margin: 25px 0;
-      font-size: 1em;
-      border-radius: 10px;
-      text-align: center;
-      cursor: pointer;
-      transition: 0.4s ease;
-      animation: buttonGlow 5s infinite alternate;
-      box-shadow: 0 0 15px #00ffff, 0 0 30px #ff00ff;
-      font-family: 'Orbitron', sans-serif;
-    }
-
-    .button:hover {
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>TECHNICAL FAHAD Intro</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Audiowide&display=swap');
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background-color: #000;
-      font-family: 'Audiowide', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 120vh;
-      overflow-x: hidden;
-      color: white;
-      padding-top: 30px;
-      position: relative;
-    }
-
-    body::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(45deg, #ff00cc, #3333ff, #00ffcc, #ffcc00);
-      background-size: 600% 600%;
-      animation: gradientBackground 15s ease infinite;
-      z-index: -1;
-      opacity: 0.2;
-    }
-
-    @keyframes gradientBackground {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .neon-text {
-      font-size: 2.8em;
-      text-align: center;
-      color: #00ffff;
-      text-shadow: 0 0 5px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
-      animation: flicker 2.5s infinite alternate;
-      margin-top: 10px;
-      margin-bottom: 40px;
-    }
-
-    @keyframes flicker {
-      0% { opacity: 1; }
-      50% { opacity: 0.9; }
-      100% { opacity: 1; }
-    }
-
-    /* PHOTO FIXED */
-    .photo-container {
-      position: relative;
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      margin-bottom: 50px;
-    }
-
-    .photo-container img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      display: block;
-      object-fit: cover;
-      position: relative;
-      z-index: 1;
-    }
-
-    .photo-container::before {
-      content: '';
-      position: absolute;
-      top: -5px;
-      left: -5px;
-      right: -5px;
-      bottom: -5px;
-      border-radius: 50%;
-      background: conic-gradient(#ff00cc, #00ffff, #ffcc00, #00ffcc, #ff00cc);
-      z-index: 0;
-      animation: rotateNeon 5s linear infinite;
-    }
-
-    @keyframes rotateNeon {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    .box {
-      position: relative;
-      padding: 30px;
-      margin-bottom: 40px;
-      width: 75%;
-      max-width: 700px;
-      text-align: center;
-      font-size: 1.3em;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 15px;
-      z-index: 1;
-      overflow: hidden;
-      font-family: 'Orbitron', sans-serif;
-      color: #000;
-    }
-
-    .box::before {
-      content: '';
-      position: absolute;
-      top: -3px;
-      left: -3px;
-      right: -3px;
-      bottom: -3px;
-      background: linear-gradient(60deg, #ff00cc, #00ffff, #ffcc00, #00ffcc, #ff00cc);
-      background-size: 400% 400%;
-      border-radius: 20px;
-      z-index: -1;
-      animation: rotateBorder 20s linear infinite;
-      filter: blur(2px);
-    }
-
-    @keyframes rotateBorder {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .button {
-      background-color: #111;
-      color: #fff;
-      border: 2px solid transparent;
-      padding: 15px 30px;
-      margin: 25px 0;
-      font-size: 1em;
-      border-radius: 10px;
-      text-align: center;
-      cursor: pointer;
-      transition: 0.4s ease;
-      animation: buttonGlow 5s infinite alternate;
-      box-shadow: 0 0 15px #00ffff, 0 0 30px #ff00ff;
-      font-family: 'Orbitron', sans-serif;
-    }
-
-    .button:hover {
-      transform: scale(1.07);
-      box-shadow: 0 0 25px #ff00cc, 0 0 35px #00ffcc;
-    }
-
-    @keyframes buttonGlow {
-      0% {
-        box-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
-        border-color: #00ffff;
-      }
-      50% {
-        box-shadow: 0 0 20px #ff33cc, 0 0 30px #00ffcc;
-        border-color: #ff00cc;
-      }
-      100% {
-        box-shadow: 0 0 25px #00ffcc, 0 0 40px #ff66ff;
-        border-color: #00ffff;
-      }
-    }
-
-  </style>
+/* WHATSAPP */
+.whatsapp-btn{
+  position:fixed;
+  bottom:12px;
+  left:50%;
+  transform:translateX(-50%);
+  width:90%;
+  max-width:480px;
+  padding:16px;
+  border-radius:16px;
+  border:2px solid transparent;
+  background:
+    linear-gradient(#25D366,#25D366) padding-box,
+    linear-gradient(90deg,#00ffea,#ff00ff,#00ff00) border-box;
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+  z-index:99;
+}
+</style>
 </head>
+
 <body>
 
-  <h1 class="neon-text">TECHNICAL FAHAD</h1>
+<div class="container">
 
-  <!-- PHOTO -->
-  <div class="photo-container">
-    <img src="fahad.jpg" alt="Fahad Photo">
+  <div class="header">
+    <div class="profile-photo">
+      <img src="Fahad.jpg">
+    </div>
+    <h1>TECHNICAL FAHAD</h1>
+    <p>Hyper Hacker Stylish Fonts Generator</p>
   </div>
 
-  <!-- 1st Intro Box -->
-  <div class="box">
-    Welcome to my official website!  
-    I am Technical Fahad – Android Developer, Script Maker, Bot Developer,  
-    and CyberTech Specialist.
-  </div>
+  <input id="name" placeholder="Enter text">
 
-  <!-- ⭐ 2nd Intro Box (New One Added) -->
-  <div class="box">
-    IF You Wanna Free TikTok Likes Trick  
-    Then Click On ( Contact ) Button  
-    And Get The Trick 👻
-  </div>
+  <button class="generate-btn" onclick="generate()">GENERATE FONTS</button>
 
-  <!-- CONTACT BUTTON -->
-  <a href="https://wa.me/923251138959" target="_blank">
-    <button class="button">Contact Me</button>
-  </a>
+  <div class="result" id="result"></div>
+</div>
+
+<button class="whatsapp-btn" onclick="openWhatsApp()">CONTACT WHATSAPP</button>
+
+<script>
+const symbols=["༺","༻","꧁","꧂","乂","〆","☬","⚡","☠","⌬","⛧","✶","✤","⟆","❖"];
+const fonts=[
+"Orbitron","Share Tech Mono","Black Ops One","Nosifer","Megrim","Unica One",
+"VT323","Monofett","Krona One","Fira Code","Press Start 2P","Luckiest Guy",
+"Alfa Slab One","Monoton","Pacifico","Dancing Script","Great Vibes",
+"Satisfy","Righteous","Pirata One","Bangers","Fredoka One","Chewy",
+"Courier Prime","Roboto Slab","Bungee","Sigmar One"
+];
+
+function generate(){
+  const t=document.getElementById("name").value.trim();
+  if(!t){alert("Enter text");return}
+  const r=document.getElementById("result");
+  r.innerHTML="";
+  for(let i=0;i<160;i++){
+    const s=symbols[Math.floor(Math.random()*symbols.length)];
+    const f=fonts[Math.floor(Math.random()*fonts.length)];
+    const txt=`${s}${s}${t}${s}${s}`;
+    const d=document.createElement("div");
+    d.className="card";
+    d.style.fontFamily=f;
+    d.innerHTML=`<span>${txt}</span><span class="copy" onclick="copyText('${txt}')">Copy</span>`;
+    r.appendChild(d);
+  }
+}
+
+function copyText(t){
+  navigator.clipboard.writeText(t);
+  alert("Copied");
+}
+
+function openWhatsApp(){
+  const msg="HELLO SIRE IM FROM YOUR FONTS CHANGING SITE ITS REALLY AMAZING BRO 🫰❣️";
+  window.open("https://wa.me/923251138959?text="+encodeURIComponent(msg));
+}
+</script>
 
 </body>
-</html>
+  </html>
