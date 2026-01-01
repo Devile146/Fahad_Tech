@@ -18,7 +18,7 @@ body{
   padding-bottom:120px;
 }
 
-/* HACKER GRID BACKGROUND */
+/* GRID BACKGROUND */
 body::before{
   content:"";
   position:fixed;
@@ -41,7 +41,7 @@ body::before{
   padding:15px;
 }
 
-/* PROFILE PHOTO — CLEAN IMAGE + SIDE RING */
+/* PROFILE */
 .profile-photo{
   position:relative;
   width:120px;
@@ -51,10 +51,9 @@ body::before{
   display:flex;
   align-items:center;
   justify-content:center;
-  z-index:1;
+  cursor:pointer;
 }
 
-/* RING ONLY */
 .profile-photo::before{
   content:"";
   position:absolute;
@@ -64,18 +63,13 @@ body::before{
   animation:ringHue 6s linear infinite;
   z-index:-1;
 }
+@keyframes ringHue{100%{filter:hue-rotate(360deg)}}
 
-@keyframes ringHue{
-  100%{filter:hue-rotate(360deg)}
-}
-
-/* CLEAN PHOTO */
 .profile-photo img{
   width:100%;
   height:100%;
   border-radius:50%;
   object-fit:cover;
-  background:#02040a;
   border:4px solid #02040a;
 }
 
@@ -96,7 +90,7 @@ input{
   font-size:16px;
 }
 
-/* GENERATE BUTTON */
+/* BUTTONS */
 .generate-btn{
   width:100%;
   padding:14px;
@@ -110,14 +104,12 @@ input{
   cursor:pointer;
 }
 
-/* RESULT */
 .result{
   margin-top:20px;
   max-height:760px;
   overflow-y:auto;
 }
 
-/* FONT CARD */
 .card{
   padding:20px;
   margin-bottom:16px;
@@ -134,7 +126,6 @@ input{
   word-break:break-word;
 }
 
-/* COPY BUTTON */
 .copy{
   font-family:Poppins,sans-serif;
   color:#fff;
@@ -163,6 +154,37 @@ input{
   cursor:pointer;
   z-index:99;
 }
+
+/* FULLSCREEN PHOTO OVERLAY */
+.photo-viewer{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.95);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  z-index:9999;
+}
+
+.photo-viewer img{
+  max-width:90%;
+  max-height:80%;
+  border-radius:12px;
+}
+
+.close-btn{
+  margin-top:20px;
+  padding:12px 20px;
+  border-radius:10px;
+  border:2px solid transparent;
+  background:
+    linear-gradient(#02040a,#02040a) padding-box,
+    linear-gradient(90deg,#00ffea,#ff00ff,#00ff00) border-box;
+  color:#00ffea;
+  font-weight:700;
+  cursor:pointer;
+}
 </style>
 </head>
 
@@ -170,7 +192,7 @@ input{
 
 <div class="container">
   <div class="header">
-    <div class="profile-photo">
+    <div class="profile-photo" onclick="openPhoto()">
       <img src="Fahad.jpg" alt="Fahad">
     </div>
     <h1>TECHNICAL FAHAD</h1>
@@ -183,6 +205,12 @@ input{
 </div>
 
 <button class="whatsapp-btn" onclick="openWhatsApp()">CONTACT WHATSAPP</button>
+
+<!-- FULLSCREEN VIEW -->
+<div class="photo-viewer" id="photoViewer">
+  <img src="Fahad.jpg">
+  <button class="close-btn" onclick="closePhoto()">⬅ BACK</button>
+</div>
 
 <script>
 const symbols=["༺","༻","꧁","꧂","乂","〆","☬","⚡","☠","⌬","⛧","✶","✤","⟆","❖"];
@@ -220,7 +248,15 @@ function openWhatsApp(){
   const msg="HELLO SIRE IM FROM YOUR FONTS CHANGING SITE ITS REALLY AMAZING BRO 🫰❣️";
   window.open("https://wa.me/923251138959?text="+encodeURIComponent(msg));
 }
+
+/* PHOTO VIEW */
+function openPhoto(){
+  document.getElementById("photoViewer").style.display="flex";
+}
+function closePhoto(){
+  document.getElementById("photoViewer").style.display="none";
+}
 </script>
 
 </body>
-</html>
+  </html>
