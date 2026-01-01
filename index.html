@@ -30,38 +30,56 @@ body::before{
   animation:gridMove 10s linear infinite;
   z-index:-2;
 }
-
 @keyframes gridMove{
   from{background-position:0 0,0 0}
   to{background-position:40px 40px,40px 40px}
 }
 
-/* CONTAINER */
 .container{
   max-width:480px;
   margin:20px auto;
   padding:15px;
 }
 
-/* PROFILE */
+/* PROFILE PHOTO — CLEAN IMAGE + SIDE RING */
 .profile-photo{
+  position:relative;
   width:120px;
   height:120px;
   margin:0 auto 10px;
   border-radius:50%;
-  padding:5px;
-  background:conic-gradient(#00ffea,#ff00ff,#00ff00,#00ffea);
-  animation:hue 6s linear infinite;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:1;
 }
+
+/* RING ONLY */
+.profile-photo::before{
+  content:"";
+  position:absolute;
+  inset:-5px;
+  border-radius:50%;
+  background:conic-gradient(#00ffea,#ff00ff,#00ff00,#00ffea);
+  animation:ringHue 6s linear infinite;
+  z-index:-1;
+}
+
+@keyframes ringHue{
+  100%{filter:hue-rotate(360deg)}
+}
+
+/* CLEAN PHOTO */
 .profile-photo img{
   width:100%;
   height:100%;
   border-radius:50%;
   object-fit:cover;
+  background:#02040a;
   border:4px solid #02040a;
 }
-@keyframes hue{100%{filter:hue-rotate(360deg)}}
 
+/* HEADER */
 .header{text-align:center}
 .header h1{color:#00ffea;margin-bottom:5px}
 .header p{font-size:13px;color:#aaa}
@@ -78,7 +96,7 @@ input{
   font-size:16px;
 }
 
-/* GENERATE BUTTON WITH RING */
+/* GENERATE BUTTON */
 .generate-btn{
   width:100%;
   padding:14px;
@@ -99,9 +117,8 @@ input{
   overflow-y:auto;
 }
 
-/* FONT CARD WITH COLOR RING SIDES */
+/* FONT CARD */
 .card{
-  position:relative;
   padding:20px;
   margin-bottom:16px;
   border-radius:14px;
@@ -117,7 +134,7 @@ input{
   word-break:break-word;
 }
 
-/* COPY BUTTON (NORMAL FONT) */
+/* COPY BUTTON */
 .copy{
   font-family:Poppins,sans-serif;
   color:#fff;
@@ -152,19 +169,16 @@ input{
 <body>
 
 <div class="container">
-
   <div class="header">
     <div class="profile-photo">
-      <img src="Fahad.jpg">
+      <img src="Fahad.jpg" alt="Fahad">
     </div>
     <h1>TECHNICAL FAHAD</h1>
     <p>Hyper Hacker Stylish Fonts Generator</p>
   </div>
 
   <input id="name" placeholder="Enter text">
-
   <button class="generate-btn" onclick="generate()">GENERATE FONTS</button>
-
   <div class="result" id="result"></div>
 </div>
 
@@ -209,4 +223,4 @@ function openWhatsApp(){
 </script>
 
 </body>
-  </html>
+</html>
