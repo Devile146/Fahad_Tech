@@ -78,6 +78,7 @@ input{
   cursor:pointer;font-size:13px
 }
 
+/* JOIN WHATSAPP BUTTON */
 .whatsapp-btn{
   position:fixed;bottom:12px;left:50%;
   transform:translateX(-50%);
@@ -87,6 +88,7 @@ input{
   font-weight:700;border:none;cursor:pointer
 }
 
+/* PHOTO VIEW */
 .photo-viewer{
   position:fixed;inset:0;
   background:rgba(0,0,0,.95);
@@ -121,7 +123,8 @@ input{
   <div class="result" id="result"></div>
 </div>
 
-<button class="whatsapp-btn" onclick="openWhatsApp()">CONTACT WHATSAPP</button>
+<!-- JOIN WHATSAPP -->
+<button class="whatsapp-btn" onclick="joinGroup()">JOIN WHATSAPP</button>
 
 <div class="photo-viewer" id="photoViewer">
   <img src="Fahad.jpg">
@@ -157,24 +160,26 @@ function stylize(text){
 }
 
 function generate(){
-  const t=document.getElementById("name").value.trim();
+  const t=name.value.trim();
   if(!t){alert("Enter text");return}
-  const r=document.getElementById("result");
-  r.innerHTML="";
+  result.innerHTML="";
   for(let i=0;i<160;i++){
     const s=symbols[Math.floor(Math.random()*symbols.length)];
     const txt=`${s}${s}${stylize(t)}${s}${s}`;
     const d=document.createElement("div");
     d.className="card";
+
     const sp=document.createElement("span");
     sp.textContent=txt;
+
     const cp=document.createElement("span");
     cp.className="copy";
     cp.textContent="Copy";
     cp.onclick=()=>copyText(txt);
+
     d.appendChild(sp);
     d.appendChild(cp);
-    r.appendChild(d);
+    result.appendChild(d);
   }
 }
 
@@ -183,9 +188,11 @@ function copyText(t){
   alert("Copied ✔");
 }
 
-function openWhatsApp(){
-  window.open("https://wa.me/923251138959?text=HELLO%20BRO%20YOUR%20FONTS%20SITE%20IS%20AMAZING");
+/* JOIN GROUP */
+function joinGroup(){
+  window.open("https://chat.whatsapp.com/FE37vx7puNGCUdL5xm1dWy");
 }
+
 function openPhoto(){photoViewer.style.display="flex"}
 function closePhoto(){photoViewer.style.display="none"}
 </script>
