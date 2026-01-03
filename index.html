@@ -5,11 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Technical Fahad Hacker Fonts</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Share+Tech+Mono&family=Black+Ops+One&family=Nosifer&family=Megrim&family=Unica+One&family=VT323&family=Monofett&family=Krona+One&family=Fira+Code&family=Press+Start+2P&family=Luckiest+Guy&family=Alfa+Slab+One&family=Monoton&family=Pacifico&family=Dancing+Script&family=Great+Vibes&family=Satisfy&family=Righteous&family=Pirata+One&family=Bangers&family=Fredoka+One&family=Chewy&family=Courier+Prime&family=Roboto+Slab&family=Bungee&family=Sigmar+One&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-
 body{
   background:#02040a;
   color:#fff;
@@ -18,172 +17,96 @@ body{
   padding-bottom:120px;
 }
 
-/* GRID BACKGROUND */
+/* GRID */
 body::before{
   content:"";
   position:fixed;
   inset:0;
   background:
-    linear-gradient(rgba(0,255,170,0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,255,170,0.08) 1px, transparent 1px);
+    linear-gradient(rgba(0,255,170,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,170,.08) 1px, transparent 1px);
   background-size:40px 40px;
-  animation:gridMove 10s linear infinite;
-  z-index:-2;
+  animation:grid 10s linear infinite;
+  z-index:-1;
 }
-@keyframes gridMove{
-  from{background-position:0 0,0 0}
-  to{background-position:40px 40px,40px 40px}
+@keyframes grid{
+  to{background-position:40px 40px}
 }
 
-.container{
-  max-width:480px;
-  margin:20px auto;
-  padding:15px;
-}
+.container{max-width:480px;margin:20px auto;padding:15px}
 
 /* PROFILE */
 .profile-photo{
-  position:relative;
-  width:120px;
-  height:120px;
-  margin:0 auto 10px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
+  width:120px;height:120px;margin:0 auto 10px;
+  border-radius:50%;position:relative;cursor:pointer
 }
-
 .profile-photo::before{
-  content:"";
-  position:absolute;
-  inset:-5px;
-  border-radius:50%;
+  content:"";position:absolute;inset:-5px;border-radius:50%;
   background:conic-gradient(#00ffea,#ff00ff,#00ff00,#00ffea);
-  animation:ringHue 6s linear infinite;
-  z-index:-1;
+  animation:hue 6s linear infinite;z-index:-1
 }
-@keyframes ringHue{100%{filter:hue-rotate(360deg)}}
-
+@keyframes hue{100%{filter:hue-rotate(360deg)}}
 .profile-photo img{
-  width:100%;
-  height:100%;
-  border-radius:50%;
-  object-fit:cover;
-  border:4px solid #02040a;
+  width:100%;height:100%;border-radius:50%;
+  object-fit:cover;border:4px solid #02040a
 }
 
-/* HEADER */
 .header{text-align:center}
-.header h1{color:#00ffea;margin-bottom:5px}
+.header h1{color:#00ffea}
 .header p{font-size:13px;color:#aaa}
 
-/* INPUT */
 input{
-  width:100%;
-  padding:14px;
-  margin:15px 0 10px;
-  border:none;
-  border-radius:12px;
-  background:#0b1623;
-  color:#fff;
-  font-size:16px;
+  width:100%;padding:14px;margin:15px 0 10px;
+  border:none;border-radius:12px;
+  background:#0b1623;color:#fff;font-size:16px
 }
 
-/* BUTTONS */
 .generate-btn{
-  width:100%;
-  padding:14px;
-  border-radius:14px;
-  border:2px solid transparent;
-  background:
-    linear-gradient(#02040a,#02040a) padding-box,
-    linear-gradient(90deg,#00ffea,#ff00ff,#00ff00) border-box;
-  color:#00ffea;
-  font-weight:700;
-  cursor:pointer;
+  width:100%;padding:14px;border-radius:14px;
+  background:#02040a;color:#00ffea;
+  border:2px solid #00ffea;font-weight:700;cursor:pointer
 }
 
-.result{
-  margin-top:20px;
-  max-height:760px;
-  overflow-y:auto;
-}
+.result{margin-top:20px;max-height:760px;overflow-y:auto}
 
 .card{
-  padding:20px;
-  margin-bottom:16px;
-  border-radius:14px;
-  background:
-    linear-gradient(#0b1623,#0b1623) padding-box,
-    linear-gradient(90deg,#00ffea,#ff00ff,#00ff00) border-box;
-  border:2px solid transparent;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  min-height:85px;
-  font-size:16px;
-  word-break:break-word;
+  padding:18px;margin-bottom:14px;
+  border-radius:14px;background:#0b1623;
+  border:1px solid #00ffea;
+  display:flex;justify-content:space-between;align-items:center
 }
 
 .copy{
-  font-family:Poppins,sans-serif;
-  color:#fff;
   border:1px solid #fff;
-  padding:6px 10px;
-  border-radius:6px;
-  cursor:pointer;
+  padding:6px 10px;border-radius:6px;
+  cursor:pointer;font-size:13px
 }
 
 /* WHATSAPP */
 .whatsapp-btn{
-  position:fixed;
-  bottom:12px;
-  left:50%;
+  position:fixed;bottom:12px;left:50%;
   transform:translateX(-50%);
-  width:90%;
-  max-width:480px;
-  padding:16px;
-  border-radius:16px;
-  border:2px solid transparent;
-  background:
-    linear-gradient(#25D366,#25D366) padding-box,
-    linear-gradient(90deg,#00ffea,#ff00ff,#00ff00) border-box;
-  color:#fff;
-  font-weight:700;
-  cursor:pointer;
-  z-index:99;
+  width:90%;max-width:480px;
+  padding:16px;border-radius:16px;
+  background:#25D366;color:#fff;
+  font-weight:700;border:none;cursor:pointer
 }
 
-/* FULLSCREEN PHOTO OVERLAY */
+/* PHOTO VIEW */
 .photo-viewer{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.95);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  z-index:9999;
+  position:fixed;inset:0;
+  background:rgba(0,0,0,.95);
+  display:none;align-items:center;
+  justify-content:center;flex-direction:column;
+  z-index:9999
 }
-
-.photo-viewer img{
-  max-width:90%;
-  max-height:80%;
-  border-radius:12px;
-}
-
+.photo-viewer img{max-width:90%;max-height:80%;border-radius:12px}
 .close-btn{
-  margin-top:20px;
-  padding:12px 20px;
+  margin-top:20px;padding:12px 20px;
   border-radius:10px;
-  border:2px solid transparent;
-  background:
-    linear-gradient(#02040a,#02040a) padding-box,
-    linear-gradient(90deg,#00ffea,#ff00ff,#00ff00) border-box;
-  color:#00ffea;
-  font-weight:700;
-  cursor:pointer;
+  border:2px solid #00ffea;
+  background:#02040a;color:#00ffea;
+  cursor:pointer
 }
 </style>
 </head>
@@ -193,7 +116,7 @@ input{
 <div class="container">
   <div class="header">
     <div class="profile-photo" onclick="openPhoto()">
-      <img src="Fahad.jpg" alt="Fahad">
+      <img src="Fahad.jpg">
     </div>
     <h1>TECHNICAL FAHAD</h1>
     <p>Hyper Hacker Stylish Fonts Generator</p>
@@ -206,57 +129,54 @@ input{
 
 <button class="whatsapp-btn" onclick="openWhatsApp()">CONTACT WHATSAPP</button>
 
-<!-- FULLSCREEN VIEW -->
 <div class="photo-viewer" id="photoViewer">
   <img src="Fahad.jpg">
   <button class="close-btn" onclick="closePhoto()">⬅ BACK</button>
 </div>
 
 <script>
-const symbols=["༺","༻","꧁","꧂","乂","〆","☬","⚡","☠","⌬","⛧","✶","✤","⟆","❖"];
-const fonts=[
-"Orbitron","Share Tech Mono","Black Ops One","Nosifer","Megrim","Unica One",
-"VT323","Monofett","Krona One","Fira Code","Press Start 2P","Luckiest Guy",
-"Alfa Slab One","Monoton","Pacifico","Dancing Script","Great Vibes",
-"Satisfy","Righteous","Pirata One","Bangers","Fredoka One","Chewy",
-"Courier Prime","Roboto Slab","Bungee","Sigmar One"
+/* SYMBOLS */
+const symbols=["༺","༻","꧁","꧂","乂","〆","☬","⚡","☠","⌬","✶","❖"];
+
+/* UNICODE FONTS */
+const unicodeFonts=[
+{a:"𝗮",b:"𝗯",c:"𝗰",d:"𝗱",e:"𝗲",f:"𝗳",g:"𝗴",h:"𝗵",i:"𝗶",j:"𝗷",k:"𝗸",l:"𝗹",m:"𝗺",n:"𝗻",o:"𝗼",p:"𝗽",q:"𝗾",r:"𝗿",s:"𝘀",t:"𝘁",u:"𝘂",v:"𝘃",w:"𝘄",x:"𝘅",y:"𝘆",z:"𝘇"},
+{a:"𝒶",b:"𝒷",c:"𝒸",d:"𝒹",e:"𝑒",f:"𝒻",g:"𝓰",h:"𝒽",i:"𝒾",j:"𝒿",k:"𝓀",l:"𝓁",m:"𝓂",n:"𝓃",o:"𝑜",p:"𝓅",q:"𝓆",r:"𝓇",s:"𝓈",t:"𝓉",u:"𝓊",v:"𝓋",w:"𝓌",x:"𝓍",y:"𝓎",z:"𝓏"},
+{a:"ᴀ",b:"ʙ",c:"ᴄ",d:"ᴅ",e:"ᴇ",f:"ғ",g:"ɢ",h:"ʜ",i:"ɪ",j:"ᴊ",k:"ᴋ",l:"ʟ",m:"ᴍ",n:"ɴ",o:"ᴏ",p:"ᴘ",q:"ǫ",r:"ʀ",s:"s",t:"ᴛ",u:"ᴜ",v:"ᴠ",w:"ᴡ",x:"x",y:"ʏ",z:"ᴢ"}
 ];
 
+function stylize(text){
+  const f=unicodeFonts[Math.floor(Math.random()*unicodeFonts.length)];
+  return text.toLowerCase().split("").map(c=>f[c]||c).join("");
+}
+
 function generate(){
-  const t=document.getElementById("name").value.trim();
-  if(!t){alert("Enter text");return}
-  const r=document.getElementById("result");
-  r.innerHTML="";
+  const t=name.value.trim();
+  if(!t)return alert("Enter text");
+  result.innerHTML="";
   for(let i=0;i<160;i++){
     const s=symbols[Math.floor(Math.random()*symbols.length)];
-    const f=fonts[Math.floor(Math.random()*fonts.length)];
-    const txt=`${s}${s}${t}${s}${s}`;
-    const d=document.createElement("div");
-    d.className="card";
-    d.style.fontFamily=f;
-    d.innerHTML=`<span>${txt}</span><span class="copy" onclick="copyText('${txt}')">Copy</span>`;
-    r.appendChild(d);
+    const txt=`${s}${s}${stylize(t)}${s}${s}`;
+    result.innerHTML+=`
+      <div class="card">
+        <span>${txt}</span>
+        <span class="copy" onclick="copyText('${txt}')">Copy</span>
+      </div>`;
   }
 }
 
 function copyText(t){
   navigator.clipboard.writeText(t);
-  alert("Copied");
+  alert("Copied ✔");
 }
 
 function openWhatsApp(){
-  const msg="HELLO SIRE IM FROM YOUR FONTS CHANGING SITE ITS REALLY AMAZING BRO 🫰❣️";
-  window.open("https://wa.me/923251138959?text="+encodeURIComponent(msg));
+  window.open("https://wa.me/923251138959?text=HELLO%20BRO%20YOUR%20FONTS%20SITE%20IS%20AMAZING");
 }
 
-/* PHOTO VIEW */
-function openPhoto(){
-  document.getElementById("photoViewer").style.display="flex";
-}
-function closePhoto(){
-  document.getElementById("photoViewer").style.display="none";
-}
+function openPhoto(){photoViewer.style.display="flex"}
+function closePhoto(){photoViewer.style.display="none"}
 </script>
 
 </body>
-  </html>
+</html>
