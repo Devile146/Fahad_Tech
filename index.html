@@ -16,8 +16,6 @@ body{
   overflow-x:hidden;
   padding-bottom:120px;
 }
-
-/* GRID */
 body::before{
   content:"";
   position:fixed;
@@ -29,13 +27,10 @@ body::before{
   animation:grid 10s linear infinite;
   z-index:-1;
 }
-@keyframes grid{
-  to{background-position:40px 40px}
-}
+@keyframes grid{to{background-position:40px 40px}}
 
 .container{max-width:480px;margin:20px auto;padding:15px}
 
-/* PROFILE */
 .profile-photo{
   width:120px;height:120px;margin:0 auto 10px;
   border-radius:50%;position:relative;cursor:pointer
@@ -73,7 +68,8 @@ input{
   padding:18px;margin-bottom:14px;
   border-radius:14px;background:#0b1623;
   border:1px solid #00ffea;
-  display:flex;justify-content:space-between;align-items:center
+  display:flex;justify-content:space-between;align-items:center;
+  word-break:break-word
 }
 
 .copy{
@@ -82,7 +78,6 @@ input{
   cursor:pointer;font-size:13px
 }
 
-/* WHATSAPP */
 .whatsapp-btn{
   position:fixed;bottom:12px;left:50%;
   transform:translateX(-50%);
@@ -92,7 +87,6 @@ input{
   font-weight:700;border:none;cursor:pointer
 }
 
-/* PHOTO VIEW */
 .photo-viewer{
   position:fixed;inset:0;
   background:rgba(0,0,0,.95);
@@ -135,33 +129,52 @@ input{
 </div>
 
 <script>
-/* SYMBOLS */
 const symbols=["༺","༻","꧁","꧂","乂","〆","☬","⚡","☠","⌬","✶","❖"];
 
-/* UNICODE FONTS */
 const unicodeFonts=[
-{a:"𝗮",b:"𝗯",c:"𝗰",d:"𝗱",e:"𝗲",f:"𝗳",g:"𝗴",h:"𝗵",i:"𝗶",j:"𝗷",k:"𝗸",l:"𝗹",m:"𝗺",n:"𝗻",o:"𝗼",p:"𝗽",q:"𝗾",r:"𝗿",s:"𝘀",t:"𝘁",u:"𝘂",v:"𝘃",w:"𝘄",x:"𝘅",y:"𝘆",z:"𝘇"},
-{a:"𝒶",b:"𝒷",c:"𝒸",d:"𝒹",e:"𝑒",f:"𝒻",g:"𝓰",h:"𝒽",i:"𝒾",j:"𝒿",k:"𝓀",l:"𝓁",m:"𝓂",n:"𝓃",o:"𝑜",p:"𝓅",q:"𝓆",r:"𝓇",s:"𝓈",t:"𝓉",u:"𝓊",v:"𝓋",w:"𝓌",x:"𝓍",y:"𝓎",z:"𝓏"},
-{a:"ᴀ",b:"ʙ",c:"ᴄ",d:"ᴅ",e:"ᴇ",f:"ғ",g:"ɢ",h:"ʜ",i:"ɪ",j:"ᴊ",k:"ᴋ",l:"ʟ",m:"ᴍ",n:"ɴ",o:"ᴏ",p:"ᴘ",q:"ǫ",r:"ʀ",s:"s",t:"ᴛ",u:"ᴜ",v:"ᴠ",w:"ᴡ",x:"x",y:"ʏ",z:"ᴢ"}
+{
+a:"𝗮",b:"𝗯",c:"𝗰",d:"𝗱",e:"𝗲",f:"𝗳",g:"𝗴",h:"𝗵",i:"𝗶",j:"𝗷",
+k:"𝗸",l:"𝗹",m:"𝗺",n:"𝗻",o:"𝗼",p:"𝗽",q:"𝗾",r:"𝗿",s:"𝘀",
+t:"𝘁",u:"𝘂",v:"𝘃",w:"𝘄",x:"𝘅",y:"𝘆",z:"𝘇",
+A:"𝗔",B:"𝗕",C:"𝗖",D:"𝗗",E:"𝗘",F:"𝗙",G:"𝗚",H:"𝗛",I:"𝗜",J:"𝗝",
+K:"𝗞",L:"𝗟",M:"𝗠",N:"𝗡",O:"𝗢",P:"𝗣",Q:"𝗤",R:"𝗥",S:"𝗦",
+T:"𝗧",U:"𝗨",V:"𝗩",W:"𝗪",X:"𝗫",Y:"𝗬",Z:"𝗭",
+0:"𝟬",1:"𝟭",2:"𝟮",3:"𝟯",4:"𝟰",5:"𝟱",6:"𝟲",7:"𝟳",8:"𝟴",9:"𝟵"
+},
+{
+a:"𝒶",b:"𝒷",c:"𝒸",d:"𝒹",e:"𝑒",f:"𝒻",g:"𝓰",h:"𝒽",i:"𝒾",j:"𝒿",
+k:"𝓀",l:"𝓁",m:"𝓂",n:"𝓃",o:"𝑜",p:"𝓅",q:"𝓆",r:"𝓇",s:"𝓈",
+t:"𝓉",u:"𝓊",v:"𝓋",w:"𝓌",x:"𝓍",y:"𝓎",z:"𝓏",
+A:"𝒜",B:"ℬ",C:"𝒞",D:"𝒟",E:"ℰ",F:"ℱ",G:"𝒢",H:"ℋ",I:"ℐ",J:"𝒥",
+K:"𝒦",L:"ℒ",M:"ℳ",N:"𝒩",O:"𝒪",P:"𝒫",Q:"𝒬",R:"ℛ",S:"𝒮",
+T:"𝒯",U:"𝒰",V:"𝒱",W:"𝒲",X:"𝒳",Y:"𝒴",Z:"𝒵"
+}
 ];
 
 function stylize(text){
   const f=unicodeFonts[Math.floor(Math.random()*unicodeFonts.length)];
-  return text.toLowerCase().split("").map(c=>f[c]||c).join("");
+  return text.split("").map(c=>f[c]||c).join("");
 }
 
 function generate(){
-  const t=name.value.trim();
-  if(!t)return alert("Enter text");
-  result.innerHTML="";
+  const t=document.getElementById("name").value.trim();
+  if(!t){alert("Enter text");return}
+  const r=document.getElementById("result");
+  r.innerHTML="";
   for(let i=0;i<160;i++){
     const s=symbols[Math.floor(Math.random()*symbols.length)];
     const txt=`${s}${s}${stylize(t)}${s}${s}`;
-    result.innerHTML+=`
-      <div class="card">
-        <span>${txt}</span>
-        <span class="copy" onclick="copyText('${txt}')">Copy</span>
-      </div>`;
+    const d=document.createElement("div");
+    d.className="card";
+    const sp=document.createElement("span");
+    sp.textContent=txt;
+    const cp=document.createElement("span");
+    cp.className="copy";
+    cp.textContent="Copy";
+    cp.onclick=()=>copyText(txt);
+    d.appendChild(sp);
+    d.appendChild(cp);
+    r.appendChild(d);
   }
 }
 
@@ -173,7 +186,6 @@ function copyText(t){
 function openWhatsApp(){
   window.open("https://wa.me/923251138959?text=HELLO%20BRO%20YOUR%20FONTS%20SITE%20IS%20AMAZING");
 }
-
 function openPhoto(){photoViewer.style.display="flex"}
 function closePhoto(){photoViewer.style.display="none"}
 </script>
