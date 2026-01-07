@@ -1,106 +1,488 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<title>FAHAD-X TOOLKIT</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Orbitron&display=swap" rel="stylesheet">
+
+<title>Technical Fahad Hacker Fonts</title>
+
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;}
-html,body{height:100%;background:#000;color:#fff;overflow:hidden;}
-.hacker-bg{position:fixed; inset:0;background:url("hacker.jpg") center/cover no-repeat;z-index:-3;animation:breath 8s ease-in-out infinite;}
-.hacker-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.9));}
-@keyframes breath{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
-.noise{position:fixed;inset:0;background:url("https://grainy-gradients.vercel.app/noise.svg");opacity:.06;z-index:-2;}
-.container{width:100%;max-width:500px;height:95vh;margin:0 auto;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:10px 15px;position:relative;}
-.profile-photo{width:90px;height:90px;border-radius:50%;margin-top:10px;position:relative;box-shadow:0 0 8px rgba(0,255,255,0.4),0 0 12px rgba(255,0,255,0.3);}
-.profile-photo img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:4px solid #02040a;position:relative;z-index:2;}
-.profile-photo::after{content:"";position:absolute;inset:-6px;border-radius:50%;background:conic-gradient(#00ffff,#ff00ff,#00ff00,#ffff00,#ff0000,#00ffff);animation:ring 4s linear infinite;filter:blur(0.8px);z-index:1;}
-@keyframes ring{100%{transform:rotate(360deg);}}
-.header h1{font-size:22px;text-align:center;color:#00ffff;text-shadow:0 0 8px #00ffff;}
-.header p{font-size:13px;color:#aaa;margin-bottom:10px;text-align:center;}
-.desc-box{width:100%;padding:12px;border-radius:16px;background:rgba(10,10,10,0.95);border:1px solid rgba(0,255,255,0.25);text-align:center;font-size:17px;box-shadow:0 0 15px rgba(255,0,255,.2),0 0 15px rgba(0,255,255,.2);}
-.desc-box span{background:linear-gradient(90deg,#00ffff,#00ff00,#ff55ff,#ffff00,#ffffff);-webkit-background-clip:text;color:transparent;animation:rainbowText 3s linear infinite;}
-@keyframes rainbowText{0%{background-position:0%}100%{background-position:100%}}
-.result{width:95%;height:70%;flex:0 0 auto;overflow-y:auto;padding:10px;margin:60px auto 15px;border-radius:14px;background:rgba(5,15,25,.85);border:1px solid rgba(0,255,255,.25);box-shadow:0 0 8px #00ffff,0 0 12px #ff00ff,0 0 16px #00ff00;}
-.result::-webkit-scrollbar{width:6px;}
-.result::-webkit-scrollbar-thumb{background:#00ffff;border-radius:10px;}
-.card{width:70%;margin:0 auto 14px;padding:14px;border-radius:18px;text-align:center;font-family:'Orbitron',sans-serif;font-size:14px;letter-spacing:1.8px;color:#ffffff;border:2px solid #000;-webkit-text-stroke:1px #000;cursor:pointer;background-image:linear-gradient(90deg,#ff0000,#ff9900,#ffff00,#00ff00,#00ffff,#0000ff,#ff00ff,#ff0000);background-size:200% 200%;animation:idleGradient 5s linear infinite;transition:.3s;}
-.card:hover{transform:scale(1.05);box-shadow:0 0 20px rgba(255,0,255,.6),0 0 20px rgba(0,255,255,.6);}
-@keyframes idleGradient{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-.whatsapp-btn{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);width:70%;padding:14px;border-radius:16px;background:#25D366;color:#fff;font-weight:700;border:none;}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+
+  background:#02040a;
+
+  color:#fff;
+
+  font-family:Poppins,sans-serif;
+
+  overflow-x:hidden;
+
+  padding-bottom:120px;
+
+}
+
+
+
+/* GRID BG */
+
+body::before{
+
+  content:"";
+
+  position:fixed;
+
+  inset:0;
+
+  background:
+
+    linear-gradient(rgba(0,255,170,.08) 1px, transparent 1px),
+
+    linear-gradient(90deg, rgba(0,255,170,.08) 1px, transparent 1px);
+
+  background-size:40px 40px;
+
+  animation:grid 10s linear infinite;
+
+  z-index:-1;
+
+}
+
+@keyframes grid{to{background-position:40px 40px}}
+
+
+
+.container{max-width:480px;margin:20px auto;padding:15px}
+
+
+
+/* PROFILE */
+
+.profile-photo{
+
+  width:120px;
+
+  height:120px;
+
+  margin:0 auto 10px;
+
+  border-radius:50%;
+
+  position:relative;
+
+  cursor:pointer;
+
+}
+
+.profile-photo::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:-5px;
+
+  border-radius:50%;
+
+  background:conic-gradient(#00ffea,#ff00ff,#00ff00,#00ffea);
+
+  animation:hue 6s linear infinite;
+
+  z-index:-1;
+
+}
+
+@keyframes hue{100%{filter:hue-rotate(360deg)}}
+
+.profile-photo img{
+
+  width:100%;
+
+  height:100%;
+
+  border-radius:50%;
+
+  object-fit:cover;
+
+  border:4px solid #02040a;
+
+}
+
+
+
+/* HEADER */
+
+.header{text-align:center}
+
+.header h1{color:#00ffea}
+
+.header p{font-size:13px;color:#aaa}
+
+
+
+/* INPUT */
+
+input{
+
+  width:100%;
+
+  padding:14px;
+
+  margin:15px 0 10px;
+
+  border:none;
+
+  border-radius:12px;
+
+  background:#0b1623;
+
+  color:#fff;
+
+  font-size:16px;
+
+}
+
+
+
+/* BUTTON */
+
+.generate-btn{
+
+  width:100%;
+
+  padding:14px;
+
+  border-radius:14px;
+
+  background:#02040a;
+
+  border:2px solid #00ffea;
+
+  color:#00ffea;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+}
+
+
+
+/* RESULT */
+
+.result{margin-top:20px;max-height:760px;overflow-y:auto}
+
+.card{
+
+  padding:18px;
+
+  margin-bottom:14px;
+
+  border-radius:14px;
+
+  background:#0b1623;
+
+  border:1px solid #00ffea;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  word-break:break-word;
+
+}
+
+.copy{
+
+  border:1px solid #fff;
+
+  padding:6px 10px;
+
+  border-radius:6px;
+
+  cursor:pointer;
+
+  font-size:13px;
+
+}
+
+
+
+/* CONTACT ME */
+
+.whatsapp-btn{
+
+  position:fixed;
+
+  bottom:15px;
+
+  left:50%;
+
+  transform:translateX(-50%);
+
+  width:90%;
+
+  max-width:280px;
+
+  padding:19px;
+
+  border-radius:25px;
+
+  background:#FFFF00FF;FF64F4FF
+
+  color:#fff;
+
+  font-weight:700;
+  
+
+  border:none;
+
+  cursor:pointer;
+
+  z-index:10;
+
+}
+
+
+
+/* PHOTO VIEWER */
+
+.photo-viewer{
+
+  position:fixed;
+
+  inset:0;
+
+  background:rgba(0,0,0,.95);
+
+  display:none;
+
+  align-items:center;
+
+  justify-content:center;
+
+  flex-direction:column;
+
+  z-index:9999;
+
+}
+
+.photo-viewer img{
+
+  max-width:90%;
+
+  max-height:80%;
+
+  border-radius:12px;
+
+}
+
+.close-btn{
+
+  margin-top:20px;
+
+  padding:12px 20px;
+
+  border-radius:10px;
+
+  border:2px solid #00ffea;
+
+  background:#02040a;
+
+  color:#00ffea;
+
+  cursor:pointer;
+
+}
+
 </style>
+
 </head>
+
+
+
 <body>
 
-<div class="hacker-bg"></div>
-<div class="noise"></div>
+
 
 <div class="container">
 
-  <div class="profile-photo">
-    <img src="Fahad.jpg" alt="Profile Photo">
-  </div>
-
   <div class="header">
-    <h1>𝐅𝐀𝐇𝐀𝐃-𝐗 𝐓𝐎𝐎𝐋𝐊𝐈𝐓 </h1>
-    <p>𝙾𝙽𝙻𝚈 𝙵𝙾𝚁 𝙴𝙳𝚄𝙲𝙰𝚃𝙸𝙾𝙽𝙰𝙻 𝙿𝚄𝚁𝙿𝙾𝚂𝙴</p>
+
+    <div class="profile-photo" onclick="openPhoto()">
+
+      <img src="Fahad.jpg" alt="Fahad">
+
+    </div>
+
+    <h1>༺𓂃FAHAD_SINDHI𓂅࿐</h1>
+
+    <p>Hyper Hacker Stylish Fonts Generator</p>
+
   </div>
 
-  <div class="desc-box">
-    <span>ʜᴇʏ ʙʀᴏ ! ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ғᴀʜᴀᴅ-x ᴛᴏᴏʟᴋɪᴛ , ᴅᴏɴ'ᴛ ᴜsᴇ ɪᴛ ғᴏʀ ᴀɴʏ ᴡʀᴏɴɢ ᴘᴜʀᴘᴏsᴇ ᴏᴛʜᴇʀᴡɪsᴇ ɪ ᴡᴏᴜʟᴅɴ'ᴛ ʀᴇsᴘᴏɴsɪʙʟᴇ </span>
-  </div>
 
-  <div class="result">
 
-<a href="https://devile146.github.io/Techweb/" target="_blank"><div class="card">👻 OWNER 👻</div></a>
-<a href="https://youtu.be/PUpPzZwsqC8?si=pb75Xx9lJJkHgEwk" target="_blank"><div class="card">👻 MOBILE FAST SETTING 👻</div></a>
-<a href="https://www.mediafire.com/file/61oi9kniv00duzn/Programing.7z/file" target="_blank"><div class="card">👻 PROGRAMING 👻</div></a>
-<a href="https://www.mediafire.com/file/iat9tlglyxp30qk/TikTok_UK_USA_Methode.mp4/file" target="_blank"><div class="card">👻 TIKTOK UK / USA 👻</div></a>
-<a href="https://youtu.be/fX6DSOublok?si=Zo8rQCYI-LmnypAz" target="_blank"><div class="card">👻 SOLVE UNOFICIAL PROBLEM 👻</div></a>
-<a href="https://zefoy.com/" target="_blank"><div class="card">👻 TIKTOK FREE LIKES 👻</div></a>
-<a href="https://youtu.be/r6a1KhujWzY?si=b_OaNwwEGNcFmSaF" target="_blank"><div class="card">👻 CCTV HACKING 👻</div></a>
-<a href="https://youtu.be/RJzvw390Lfo?si=QtawIwMAUQ4tjQcD" target="_blank"><div class="card">👻 HACK SPEAKER (LINUX) 👻</div></a>
-<a href="https://www.mediafire.com/file/c98cx4pg4uo2ypi/Phone+Hack.zip/file" target="_blank"><div class="card">👻 FULL MOB HACK 👻</div></a>
-<a href="https://www.ip-tracker.org/" target="_blank"><div class="card">👻 IP TRACKING 👻</div></a>
-<a href="https://www.mediafire.com/file/sfr8otsjsnko6ro/VID_20260105_000842_815.mp4.mkv/file" target="_blank"><div class="card">👻 PHONE CONTROL APP 👻</div></a>
+  <input id="textInput" placeholder="Enter text">
 
-<div class="card">👻 GELLERY HACK (COMING SOON) 👻</div>
+  <button class="generate-btn" onclick="generate()">GENERATE FONTS</button>
 
-<a href="https://youtu.be/YG-nh-GL0yw?si=Pu2dzqs2k0_lc0kn" target="_blank"><div class="card">👻 TIKTOK VIRAL TRICK 👻</div></a>
-<a href="https://www.mediafire.com/file/il64l4ov4oi1txf/WHATSAPP_HACK_NEW_METHOD.zip/file" target="_blank"><div class="card">👻 WHATSAPP HACK 👻</div></a>
-<a href="https://www.mediafire.com/file/ahagakdq0649l2l/CamHack_Trick.zip/file" target="_blank"><div class="card">👻 EASY CAMERA HACK 👻</div></a>
-<a href="https://www.mediafire.com/file/spbrrpnm6qmf08v/Location+Hack.zip/file" target="_blank"><div class="card">👻 LOCATION HACK 👻</div></a>
-<a href="https://youtu.be/WdM-QOxnOL8?si=ROhHS2H9x3yftyJS" target="_blank"><div class="card">👻 HACKING LINKS 👻</div></a>
-
-<div class="card">👻 WHATSAPP BAN (COMING SOON) 👻</div>
-
-<a href="https://www.mediafire.com/file/g7thic6ro8dwi03/UNBAN_APK_1.0.apk/file" target="_blank"><div class="card">👻 UNBAN REPORT APK 👻</div></a>
-
-<div class="card">👻 ANDROID CODES (COMING SOON) 👻</div>
-
-<a href="https://liteapks.com/" target="_blank"><div class="card">👻 PRO APPS METHODE 👻</div></a>
-<a href="https://www.mediafire.com/file/qfvn0jonaj0ql7z/FACEBOOK_EMOJI_NAME_ID_NEW_UPDATE_2025_Trick_Master.mp4/file" target="_blank"><div class="card">👻 FB STYLISH NAME 👻</div></a>
-<a href="https://l8.nu/" target="_blank"><div class="card">👻 LONG URL TO SHORT 👻</div></a>
-
-<div class="card">👻 WP FAKE REACTS FOR MSG (COMING SOON) 👻</div>
-
-<a href="https://share.google/90p8Gqpb5DTM06v2O" target="_blank"><div class="card">👻 VICE CITY WITH CHEAT CODS 👻</div></a>
-<a href="https://share.google/eYuBQkn9w7WwL513B" target="_blank"><div class="card">👻 GTA SENADRESS 👻</div></a>
-<a href="https://www.mediafire.com/file/f5heqs9y32pe97o/Mobile_Ads_Solution.mp4/file" target="_blank"><div class="card">👻 REMOVE PHONE ADS 👻</div></a>
-<a href="https://www.mediafire.com/file/7qtxyi17ovgpyvc/MOBILE_HIDDEN_CAMERA_METHOD.zip/file" target="_blank"><div class="card">👻 MOBILE HIDDEN CAMERA 👻</div></a>
-<a href="https://play.google.com/store/apps/details?id=org.socialsigma.deeproxy" target="_blank"><div class="card">👻 PROXY FOR TELEGRAM 👻</div></a>
-<a href="https://devile146.github.io/Fahad_Tech/" target="_blank"><div class="card">👻 STYLISH NAME 👻</div></a>
-<a href="https://youtube-free-views.vercel.app/" target="_blank"><div class="card">👻 YT WATCH-TIME 👻</div></a>
-<a href="https://www.mediafire.com/file/watf6hh6jhgx995/GMAIL_WITHOUT_PHONE_NUMBERS_.zip/file" target="_blank"><div class="card">👻 UNLIMITED GMAIL 👻</div></a>
-<a href="https://www.simownerdetailss.com.pk/" target="_blank"><div class="card">👻 SIM DATABASE 1 👻</div></a>
-<a href="https://t.me/fahad_tricks_bot" target="_blank"><div class="card">👻 MY NEW HACKING BOT 👻</div></a>
+  <div class="result" id="result"></div>
 
 </div>
 
+
+
+<button class="whatsapp-btn" onclick="joinGroup()">CONTACT ME</button>
+
+
+
+<!-- FULLSCREEN PHOTO -->
+
+<div class="photo-viewer" id="photoViewer">
+
+  <img src="Fahad.jpg">
+
+  <button class="close-btn" onclick="closePhoto()">⬅ BACK</button>
+
 </div>
 
-<button class="whatsapp-btn" onclick="window.open('https://wa.me/923251138959','_blank')">CONTACT WHATSAPP</button>
+
+
+<script>
+
+const symbols=["༺","༻","꧁","꧂","乂","〆","☬","⚡","☠","✶","❖"];
+
+
+
+const unicodeFonts=[
+
+{
+
+a:"𝗮",b:"𝗯",c:"𝗰",d:"𝗱",e:"𝗲",f:"𝗳",g:"𝗴",h:"𝗵",i:"𝗶",j:"𝗷",
+
+k:"𝗸",l:"𝗹",m:"𝗺",n:"𝗻",o:"𝗼",p:"𝗽",q:"𝗾",r:"𝗿",s:"𝘀",
+
+t:"𝘁",u:"𝘂",v:"𝘃",w:"𝘄",x:"𝘅",y:"𝘆",z:"𝘇",
+
+A:"𝗔",B:"𝗕",C:"𝗖",D:"𝗗",E:"𝗘",F:"𝗙",G:"𝗚",H:"𝗛",I:"𝗜",J:"𝗝",
+
+K:"𝗞",L:"𝗟",M:"𝗠",N:"𝗡",O:"𝗢",P:"𝗣",Q:"𝗤",R:"𝗥",S:"𝗦",
+
+T:"𝗧",U:"𝗨",V:"𝗩",W:"𝗪",X:"𝗫",Y:"𝗬",Z:"𝗭",
+
+0:"𝟬",1:"𝟭",2:"𝟮",3:"𝟯",4:"𝟰",5:"𝟱",6:"𝟲",7:"𝟳",8:"𝟴",9:"𝟵"
+
+},
+
+{
+
+a:"𝒶",b:"𝒷",c:"𝒸",d:"𝒹",e:"𝑒",f:"𝒻",g:"𝓰",h:"𝒽",i:"𝒾",j:"𝒿",
+
+k:"𝓀",l:"𝓁",m:"𝓂",n:"𝓃",o:"𝑜",p:"𝓅",q:"𝓆",r:"𝓇",s:"𝓈",
+
+t:"𝓉",u:"𝓊",v:"𝓋",w:"𝓌",x:"𝓍",y:"𝓎",z:"𝓏"
+
+}
+
+];
+
+
+
+function stylize(text){
+
+  const f=unicodeFonts[Math.floor(Math.random()*unicodeFonts.length)];
+
+  return text.split("").map(c=>f[c]||c).join("");
+
+}
+
+
+
+function generate(){
+
+  const input=document.getElementById("textInput").value.trim();
+
+  if(!input){alert("Enter text");return;}
+
+  const result=document.getElementById("result");
+
+  result.innerHTML="";
+
+  for(let i=0;i<160;i++){
+
+    const s=symbols[Math.floor(Math.random()*symbols.length)];
+
+    const txt=`${s}${s}${stylize(input)}${s}${s}`;
+
+    const d=document.createElement("div");
+
+    d.className="card";
+
+    const sp=document.createElement("span");
+
+    sp.textContent=txt;
+
+    const cp=document.createElement("span");
+
+    cp.className="copy";
+
+    cp.textContent="Copy";
+
+    cp.onclick=()=>navigator.clipboard.writeText(txt);
+
+    d.appendChild(sp);
+
+    d.appendChild(cp);
+
+    result.appendChild(d);
+
+  }
+
+}
+
+
+
+function joinGroup(){
+
+  window.open("https://wa.me/923251138959?text=HELLO%20SIR%20IM%20FROM%20YOUR%20FONTS%20GENERATOR%20TOOL");
+
+}
+
+
+
+/* PHOTO */
+
+function openPhoto(){
+
+  document.getElementById("photoViewer").style.display="flex";
+
+}
+
+function closePhoto(){
+
+  document.getElementById("photoViewer").style.display="none";
+
+}
+
+</script>
+
+
 
 </body>
+
 </html>
