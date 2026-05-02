@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>Fahad Tech Fonts Generater</title>
+  <title>Fahad Tech Fonts Generator</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;500&display=swap" rel="stylesheet">
   <style>
     * {
@@ -116,6 +116,12 @@
       text-align: center;
       outline: none;
       font-family: 'Poppins', monospace;
+    }
+    .input-group input::placeholder {
+      color: #6a7c9e;
+      font-weight: 400;
+      font-size: 13px;
+      opacity: 0.8;
     }
     .input-group input:focus {
       border-color: #00ffea;
@@ -283,36 +289,36 @@
 <body>
 <div class="phone-container">
   <div class="app-wrapper">
-    <!-- PROFILE: fixed width, name and dp perfectly centered, no side issue -->
+    <!-- PROFILE: fixed width, name and dp perfectly centered -->
     <div class="profile-area">
       <div class="avatar" onclick="openPhotoModal()">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230b1222'/%3E%3Ctext x='50' y='67' font-size='34' text-anchor='middle' fill='%2300ffea' font-weight='bold' font-family='monospace'%3EFH%3C/text%3E%3C/svg%3E" alt="Fahad">
+        <img id="profileImage" src="https://avatars.githubusercontent.com/u/110894122?v=4" alt="Fahad" onerror="this.src='https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png'">
       </div>
       <h1>༺𓂃FAHAD_SINDHI𓂅࿐</h1>
-      <div class="sub">⚡ FAHAD TECH STYLISH FONT GENERATER⚡</div>
+      <div class="sub">⚡ FAHAD TECH STYLISH FONT GENERATOR ⚡</div>
     </div>
 
-    <!-- input field - same width as name section -->
+    <!-- input field - ab sirf placeholder hai, koi likha hua nahi -->
     <div class="input-group">
-      <input type="text" id="userText" placeholder="✍️ ENTER TEXT" autocomplete="off">
+      <input type="text" id="userText" placeholder="✍️ ENTER TEXT" autocomplete="off" value="">
     </div>
 
     <!-- generate button - full width -->
     <button class="gen-btn" id="generateFontsBtn">🌀 GENERATE FONTS 🌀</button>
 
-    <!-- fonts container - fixed height, scroll works, all cards same width -->
+    <!-- fonts container - fixed height, scroll works -->
     <div class="fonts-scroll" id="fontsScrollArea">
       <div id="fontsList" style="display: flex; flex-direction: column; width: 100%;"></div>
     </div>
   </div>
 </div>
 
-<!-- FIXED CONTACT BUTTON (chhota kiya gaya) -->
+<!-- FIXED CONTACT BUTTON -->
 <button class="contact-mini" id="whatsappBtn">📲 CONTACT ME</button>
 
 <!-- PHOTO MODAL -->
 <div class="photo-modal" id="photoModal">
-  <img id="modalImg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230b1222'/%3E%3Ctext x='50' y='67' font-size='34' text-anchor='middle' fill='%2300ffea'%3EFH%3C/text%3E%3C/svg%3E" alt="Fahad">
+  <img id="modalImg" src="" alt="Fahad">
   <button class="close-modal" onclick="closePhotoModal()">⬅ BACK</button>
 </div>
 
@@ -364,7 +370,7 @@
     return result;
   }
 
-  // Generate stylish fonts - all cards same width, no side overflow
+  // Generate stylish fonts
   function generateStylishFonts() {
     const inputEl = document.getElementById("userText");
     let raw = inputEl.value.trim();
@@ -376,12 +382,11 @@
     const container = document.getElementById("fontsList");
     container.innerHTML = "";
     
-    const totalCards = 58;   // smooth scroll, perfect layout
+    const totalCards = 58;
     for(let i = 0; i < totalCards; i++) {
       const fontMap = pickRandomFont();
       let styledRaw = convertText(raw, fontMap);
       
-      // dynamic hacker-style borders
       const leftSym = symbolList[Math.floor(Math.random() * symbolList.length)];
       const rightSym = symbolList[Math.floor(Math.random() * symbolList.length)];
       const extraGlitch = Math.random() > 0.65 ? ` ${symbolList[Math.floor(Math.random() * symbolList.length)]} ` : " ";
@@ -413,24 +418,40 @@
     }
   }
 
-  // WhatsApp contact handler (button chhota hai)
+  // WhatsApp contact handler
   function openWhatsApp() {
     window.open("https://wa.me/923251138959?text=HELLO%20FAHAD%20SIR%20-%20360PX%20FONTS", "_blank");
   }
 
-  // Photo viewer
+  // Photo viewer - now using the actual GitHub profile image
   function openPhotoModal() {
     const modal = document.getElementById("photoModal");
-    const avatarSrc = document.querySelector(".avatar img").src;
-    document.getElementById("modalImg").src = avatarSrc;
+    const profileImg = document.getElementById("profileImage");
+    const modalImg = document.getElementById("modalImg");
+    modalImg.src = profileImg.src;
     modal.style.display = "flex";
   }
+  
   function closePhotoModal() {
     document.getElementById("photoModal").style.display = "none";
   }
 
-  // ensure everything is centered, widths consistent, no side offset
+  // Set profile image from GitHub with fallback
+  function setProfileImage() {
+    const profileImg = document.getElementById("profileImage");
+    // Using the provided GitHub avatar URL (Fahad's profile)
+    // If image fails to load, it will try a working GitHub avatar fallback
+    profileImg.src = "https://avatars.githubusercontent.com/u/110894122?v=4";
+    profileImg.onerror = function() {
+      // Fallback to a cool hacker-style avatar if GitHub image fails
+      this.src = "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png";
+    };
+  }
+
+  // ensure everything is centered, widths consistent
   document.addEventListener("DOMContentLoaded", () => {
+    setProfileImage();
+    
     const genButton = document.getElementById("generateFontsBtn");
     genButton.addEventListener("click", generateStylishFonts);
     const contactBtn = document.getElementById("whatsappBtn");
@@ -439,11 +460,10 @@
     textInput.addEventListener("keypress", (e) => {
       if(e.key === "Enter") generateStylishFonts();
     });
-    // set default demo text
-    textInput.value = "";
-    generateStylishFonts();
     
-    // extra: ensure body & container never shift sideways
+    // Input field is completely empty, only placeholder shows
+    textInput.value = "";
+    
     window.addEventListener("resize", () => {
       if(window.innerWidth > 360) {
         document.body.style.justifyContent = "center";
