@@ -251,6 +251,8 @@
       border-radius: 28px;
       border: 2px solid cyan;
       box-shadow: 0 0 20px cyan;
+      object-fit: contain;
+      background: #02040a;
     }
     .close-modal {
       margin-top: 24px;
@@ -292,7 +294,7 @@
     <!-- PROFILE: fixed width, name and dp perfectly centered -->
     <div class="profile-area">
       <div class="avatar" onclick="openPhotoModal()">
-        <img id="profileImage" src="https://avatars.githubusercontent.com/u/110894122?v=4" alt="Fahad" onerror="this.src='https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png'">
+        <img id="profileImage" src="Fahad.jpg" alt="Fahad" onerror="this.src='https://avatars.githubusercontent.com/u/110894122?v=4'">
       </div>
       <h1>༺𓂃FAHAD_SINDHI𓂅࿐</h1>
       <div class="sub">⚡ FAHAD TECH STYLISH FONT GENERATOR ⚡</div>
@@ -375,7 +377,7 @@
     const inputEl = document.getElementById("userText");
     let raw = inputEl.value.trim();
     if(raw === "") {
-      alert("⚠️ Please enter some text! ⚠️");
+      alert("");
       return;
     }
     
@@ -423,7 +425,7 @@
     window.open("https://wa.me/923251138959?text=HELLO%20FAHAD%20SIR%20-%20360PX%20FONTS", "_blank");
   }
 
-  // Photo viewer - now using the actual GitHub profile image
+  // Photo viewer - show Fahad.jpg image
   function openPhotoModal() {
     const modal = document.getElementById("photoModal");
     const profileImg = document.getElementById("profileImage");
@@ -436,21 +438,21 @@
     document.getElementById("photoModal").style.display = "none";
   }
 
-  // Set profile image from GitHub with fallback
-  function setProfileImage() {
+  // Ensure Fahad.jpg loads properly
+  function setupProfileImage() {
     const profileImg = document.getElementById("profileImage");
-    // Using the provided GitHub avatar URL (Fahad's profile)
-    // If image fails to load, it will try a working GitHub avatar fallback
-    profileImg.src = "https://avatars.githubusercontent.com/u/110894122?v=4";
+    // Try to load Fahad.jpg from the same directory/GitHub
+    profileImg.src = "Fahad.jpg";
+    // If Fahad.jpg fails to load, use GitHub avatar as fallback
     profileImg.onerror = function() {
-      // Fallback to a cool hacker-style avatar if GitHub image fails
-      this.src = "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png";
+      console.log("Fahad.jpg not found, using GitHub avatar fallback");
+      this.src = "https://avatars.githubusercontent.com/u/110894122?v=4";
     };
   }
 
   // ensure everything is centered, widths consistent
   document.addEventListener("DOMContentLoaded", () => {
-    setProfileImage();
+    setupProfileImage();
     
     const genButton = document.getElementById("generateFontsBtn");
     genButton.addEventListener("click", generateStylishFonts);
